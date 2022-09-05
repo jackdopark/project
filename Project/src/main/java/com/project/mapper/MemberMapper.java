@@ -21,5 +21,7 @@ public interface MemberMapper {
 
 	public String findAccount(Map<String, Object> map);
 
+	public int findChangePwd(Map<String, Object> map);
+
 	
 }

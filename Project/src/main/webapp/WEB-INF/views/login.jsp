@@ -25,10 +25,12 @@
     
     <!-- custom css -->
     <style type="text/css">
-    	.findAcc:link, .findAcc:visited{color:rgb(155,155,155);}
+    	.findAcc{color:rgb(155,155,155);border:none;background-color: transparent;}
     	.findAcc:hover{color:rgb(100,100,100);}
     	.log_btn{display:flex;justify-content: space-between;}
     	.log_btn .site-btn{width:45%;}
+    	.checkout__form{max-width: 750px;min-width: 550px;}
+    	.checkout__form h4{max-width: 550px;min-width: 400px;}
     </style>
     
     <!-- jquery -->
@@ -37,7 +39,7 @@
     <script type="text/javascript">
     	$(function(){
     		$(".findAcc").click(function(){
-    			window.open('findAccount', 'window', 'width=350, height=500, left='+(window.screen.width / 2 - 200)+', top='+(window.screen.height / 2 - 200));
+    			window.open('findAccount', 'window', 'width=450, height=500, left='+(window.screen.width / 2 - 200)+', top='+(window.screen.height / 2 - 200));
     		});
     	})
     </script>
@@ -46,6 +48,7 @@
 <body>
 <jsp:include page="/template/header.jsp"></jsp:include>
 <jsp:include page="/template/bar.jsp"></jsp:include>
+<jsp:include page="/template/preloader.jsp"></jsp:include>
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
@@ -72,7 +75,7 @@
                 <h4>로그인</h4>
                 <form action="login.do" method="post">
                     <div class="row" style="float: none; margin:0 auto;">
-                        <div class="col-lg-10 col-md-6" style="float: none; margin:0 auto;">
+                        <div class="col-lg-12 col-md-8" style="float: none; margin:0 auto;">
                             <div class="checkout__input">
                                 <p>아이디<span>*</span></p>
                                 <input type="text" name="id">
@@ -86,7 +89,7 @@
 	                            <button type="button" class="site-btn" onclick="location.href='register'">회원가입</button>
                             </div>
                           	<div class="col-lg-12 col-md-12" style="text-align: right;">
-	                            <a href="#" class="findAcc">Did you forget your account?</a>
+	                            <button class="findAcc" type="button">Did you forget your account?</button>
                 			</div>
                         </div>
                     </div>

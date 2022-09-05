@@ -15,7 +15,7 @@
 			</when>
 			<otherwise>
 				(mno, id, pwd, name, birth, tel, address)
-				values(seq_mno.nextval, #{id},#{pwd},#{name},to_date(#{birth},'YYYY-MM-DD'),#{tel},#{address})
+				values(seq_mno.nextval, #{id},#{pwd},#{name},to_date(#{birth},'RRRR-MM-DD'),#{tel},#{address})
 			</otherwise>
 		</choose>
 	</insert>
@@ -38,4 +38,8 @@
 					and id=#{id} 
 			</if>
 	</select>
+	
+	<update id="findChangePwd" parameterType="map">
+		update member set pwd = #{pwd} where id = #{id}
+	</update>
 </mapper>

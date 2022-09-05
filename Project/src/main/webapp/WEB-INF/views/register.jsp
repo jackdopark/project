@@ -50,7 +50,8 @@
 		if(id.length == 0){alert("아이디는 필수 입력사항입니다.");$("#id").focus();return false;}
 		else if(id.length < 8){alert("아이디는 8글자 이상이어야 합니다.");$("#id").focus();return false;}
 		
-		else if(pwd.length == 0){alert("비밀번호는 필수 입력사항입니다.");$("#pwd").focus();return false;}
+		if(pwd.length == 0){alert("비밀번호는 필수 입력사항입니다.");$("#pwd").focus();return false;}
+		else if(pwd.length < 10){alert("비밀번호는 10자리 이상 입력해야 됩니다.");$("#pwd").focus();return false;}
 		else if(pwd2.length == 0){alert("비밀번호는 필수 입력사항입니다.");$("#pwd2").focus();return false;}
 		else if(pwd != pwd2){alert("비밀번호가 일치하지않습니다.");$("#pwd2").focus();return false;}
 		else if(pwd.search(/\s/) != -1){alert("비밀번호는 공백 없이 입력해주세요.");$("#pwd").focus();return false;}
@@ -147,6 +148,7 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 <jsp:include page="/template/bar.jsp"></jsp:include>
+<jsp:include page="/template/preloader.jsp"></jsp:include>
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
@@ -180,11 +182,11 @@
                             </div>
                             <div class="checkout__input">
                                 <p>아이디<span>*</span></p>
-                                <input type="text" name="id" id="id" maxlength="20">
+                                <input type="text" name="id" id="id" maxlength="20" placeholder="아이디는 8자 이상이여야 됩니다.">
                             </div>
                             <div class="checkout__input">
                                 <p>비밀번호<span>*</span></p>
-                                <input type="password" placeholder="비밀번호는 영문/숫자/특수문자를 포함해야합니다." name="pwd" id="pwd">
+                                <input type="password" placeholder="비밀번호는 영문/숫자/특수문자 중 두 가지를 포함한 10글자 이상이어야 합니다." name="pwd" id="pwd">
                             </div>
                             <div class="checkout__input">
                                 <p>비밀번호 확인<span>*</span></p>

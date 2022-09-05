@@ -41,6 +41,8 @@
 <body>
 	<jsp:include page="/template/header.jsp"></jsp:include>
 	<jsp:include page="/template/bar.jsp"></jsp:include>
+	<jsp:include page="/template/preloader.jsp"></jsp:include>
+	
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">

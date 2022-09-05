@@ -68,6 +68,13 @@ public class MemberService {
 		return mapper.findAccount(map);
 	}
 
+	public int findChangePwd(String id, String pwd) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		return mapper.findChangePwd(map);
+	}
+
 
 
 }

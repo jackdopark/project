@@ -35,7 +35,7 @@
 		h4{margin-bottom:10px !important;}
 		input[type=radio]{width:15px;position: relative;top: -10px;}
 		/* .find{position: relative;top: 0px;} */
-		.fradio{height:30px;display: flex; justify-content: space-around;}
+		.fradio{width:60%;height:30px;display: flex; justify-content: space-around;}
 		/* .idresult, .pwdresult{display:none;} */
 		.log_btn{display:flex;justify-content: space-between;}
     	.idresult .site-btn{width:45%;}
@@ -44,6 +44,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <script>
+	    function checkInfo(status){
+	    	var id = $("#id").val();
+	    	var name = $("#name").val();
+	    	var tel = $("#tel").val();
+	    	
+	    	if(name.length == 0){alert("이름은 필수 입력사항입니다.");$("#name").focus();return false;}
+	    	else if(tel.length == 0){alert("전화번호는 필수 입력사항입니다.");$("#tel").focus();return false;}
+	    	
+	    	if(status == 1){
+				if(id.length == 0){alert("아이디는 필수 입력사항입니다.");$("#id").focus();return false;}
+	    	}
+	    }//찾기 정보 체크
+	    
+		function checkPwd(){
+			var pwd = $("#pwd").val();
+			var pwd2 = $("#pwd2").val();
+			var num = pwd.search(/[0-9]/g);
+			var eng = pwd.search(/[a-z]/ig);
+			var spe = pwd.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+			
+			if(pwd.length == 0){alert("비밀번호는 필수 입력사항입니다.");$("#pwd").focus();return false;}
+			else if(pwd.length < 10){alert("비밀번호는 10자리 이상 입력해야 됩니다.");$("#pwd").focus();return false;}
+			else if(pwd2.length == 0){alert("비밀번호는 필수 입력사항입니다.");$("#pwd2").focus();return false;}
+			else if(pwd != pwd2){alert("비밀번호가 일치하지않습니다.");$("#pwd2").focus();return false;}
+			else if(pwd.search(/\s/) != -1){alert("비밀번호는 공백 없이 입력해주세요.");$("#pwd").focus();return false;}
+			else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+				alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+				$("#pwd").focus();
+				return false;
+			}
+		}//비밀번호 체크
+		
     	$(function(){
     		$(".idresult").hide();
     		$(".pwdresult").hide();
@@ -59,15 +91,14 @@
     					$("#name").parent().prepend("<div class='checkout__input div_id'><label for='id'>아이디</label><input type='text' name='id' id='id'></div>");
     				};
     			}
-    		}); //id 양식 추가하기
+    		});//id찾기 / 비밀번호찾기 에 따른 tag 추가/삭제
     		
     		$(".findfrm").submit(function(e){
     			e.preventDefault();
     			var status = $("#fid").prop("checked") ? 0 : 1;
-    			//check();
-    			//if(status == 1){    			
-    				//id check추가
-    			//}
+    			
+    			var r = checkInfo(status); //찾기 전 빈칸 체크
+    			if(r == false) return false;
     			
     			var d = $(this).serialize();
     			d = d + "&status=" + status;
@@ -81,27 +112,55 @@
     					else{
     						$(".find").hide();
     						if(status == 0){
-    							alert("실행");
     							$(".idtext").html("<p>아이디는 ["+r.id+"] 입니다.</p>");
     							$(".idresult").show();
     						}else{
-    							$("#id").val(r.id);
+    							$("#id2").val(r.id);
     							$(".pwdresult").show();
     						}//elseif
     					}//else
     			
     				}//func
     			});//ajax
-    		});//find sub
+    		});//찾기 폼 submit
     		
+	    	//pwd 변경 ajax >> alert 이후 닫기
     		$(".findPwdChange").submit(function(e){
     			e.preventDefault();
     			
-    		})//chan
-    	})
-    	//id, pwd 유효성 검사
-    	//pwd 변경 ajax >> alert 이후 닫기
-    	//id찾기 결과창의 닫기버튼 및 이전으로 버튼 작업 처리
+    			var r = checkPwd();
+    			if(r == false) return false;
+    			
+    			console.log($("#id").val());
+    			var d = $(this).serialize();
+    			$.ajax({
+    				url:"findChangePwd.do",
+    				data:d,
+    				type:"POST",
+    				success:function(r){
+    					if(r == 0){
+    						alert("비밀번호 변경에 실패하였습니다. 다시 입력해주세요.");
+    						$("#pwd").focus();
+    					}else{
+    						alert("비밀번호 변경에 성공하였습니다.");
+    						window.close();
+    					}
+    				}
+    			});
+    		})//비밀번호 변경
+    		
+	    	$(".back").click(function(){
+	    			$(".idresult").hide();
+	    			$(".pwdresult").hide();
+	    			$(".find").show();
+	    	});//이전으로
+    		
+    		$(".cls").click(function(){
+    			window.close();
+    		});//닫기
+    		
+    	})//jquery
+    	
     </script>
 </head>
 <body>
@@ -153,7 +212,7 @@
     	<div class="checkout__form pwdresult">
         	<h4>아이디/비밀번호 찾기</h4>
             <form class="findPwdChange">
-            <input type="hidden" id="id">
+            <input type="hidden" id="id2" name="id2">
             	<div class="row" style="float: none; margin:0 auto;">
                 	<div class="col-lg-10 col-md-6" style="float: none; margin:0 auto;">
                         <div class="checkout__input">
