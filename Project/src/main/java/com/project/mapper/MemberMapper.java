@@ -23,5 +23,4 @@ public interface MemberMapper {
 
 	public int findChangePwd(Map<String, Object> map);
 
-	
 }

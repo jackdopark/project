@@ -42,4 +42,5 @@
 	<update id="findChangePwd" parameterType="map">
 		update member set pwd = #{pwd} where id = #{id}
 	</update>
+	
 </mapper>

@@ -18,19 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ogani | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    
         <style type="text/css">
     	.blog__sidebar__item h4, .blog__sidebar__item ul li{
     		padding-left:10px;
@@ -61,7 +48,7 @@
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-5 order-md-1 order-2">
+                <div class="col-lg-4 col-md-5">
                     <div class="blog__sidebar">
                         <div class="blog__sidebar__item">
                             <h4>My Info</h4>
@@ -76,65 +63,82 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-7 order-md-1 order-1">
-                    <div class="blog__details__text">
-                        <img src="img/blog/details/details-pic.jpg" alt="">
-                        <p>Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                            dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
-                            aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
-                            sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.
-                            Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.
-                            Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis
-                            quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada
-                            feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
-                        <h3>The corner window forms a place within a place that is a resting point within the large
-                            space.</h3>
-                        <p>The study area is located at the back with a view of the vast nature. Together with the other
-                            buildings, a congruent story has been managed in which the whole has a reinforcing effect on
-                            the components. The use of materials seeks connection to the main house, the adjacent
-                            stables</p>
-                    </div>
-                    <div class="blog__details__content">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="blog__details__author">
-                                    <div class="blog__details__author__pic">
-                                        <img src="img/blog/details/details-author.jpg" alt="">
-                                    </div>
-                                    <div class="blog__details__author__text">
-                                        <h6>Michael Scofield</h6>
-                                        <span>Admin</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="blog__details__widget">
-                                    <ul>
-                                        <li><span>Categories:</span> Food</li>
-                                        <li><span>Tags:</span> All, Trending, Cooking, Healthy Food, Life Style</li>
-                                    </ul>
-                                    <div class="blog__details__social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                <div class="row" style="width:60%;">
+					<div class="col-lg-12 col-md-12 col-sm-12" style="height:">
+						<div class="blog__item">
+							<div class="blog__item__text">
+								<h5><a href="#">OO월의 등급 </a></h5>
+								<p>이번달 사용금액 - OO원</p>
+								<p>다음 등급까지 남은 금액</p>
+								<p>OOOO년 예상 등급</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="blog__item">
+							<div class="blog__item__text">
+								<h5><a href="#">장바구니</a></h5>
+								<ul>
+									<li>asd</li>	
+									<li>asd</li>	
+									<li>asd</li>	
+								</ul>
+								<a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="blog__item">
+							<div class="blog__item__text">
+								<h5><a href="#">주문/배송</a></h5>
+								<ul>
+									<li>asd</li>	
+									<li>asd</li>	
+									<li>asd</li>	
+								</ul>
+								<a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8">
+						<div class="blog__item">
+							<div class="blog__item__text">
+								<h5><a href="#">내 문의내역</a></h5>
+								<ul>
+									<li>asd</li>	
+									<li>asd</li>	
+									<li>asd</li>	
+								</ul>
+								<p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+								<a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+							</div>
+						</div>
+					</div>
+<!-- 기본틀					
+ 					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="blog__item">
+							<div class="blog__item__pic">
+								<img src="img/blog/blog-2.jpg" alt="">
+							</div>
+							<div class="blog__item__text">
+								<ul>
+									<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+									<li><i class="fa fa-comment-o"></i> 5</li>
+								</ul>
+								<h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
+								<p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+								<a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+							</div>
+						</div>
+					</div> -->
+                </div><!-- row60 -->
             </div>
         </div>
     </section>
     <!-- Blog Details Section End -->
-
-    
-
    <jsp:include page="/template/footer.jsp"></jsp:include>
-
-    <!-- Js Plugins -->
+   <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
@@ -143,7 +147,5 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
-
 </html>

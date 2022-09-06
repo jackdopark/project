@@ -1,6 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+  
+<!-- Css Styles -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+<link rel="stylesheet" href="css/nice-select.css" type="text/css">
+<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+
 <!-- Header Section Begin -->
 <header class="header">
 	<div class="header__top">
@@ -60,7 +75,7 @@
 				<nav class="header__menu">
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li class="active"><a href="#">Shop</a></li>
+						<li class="active"><a href="shopList">Shop</a></li>
 						<li><a href="#">Category</a>
 							<ul class="header__menu__dropdown">
 								<li><a href="#">Computer</a></li>
@@ -72,6 +87,7 @@
 					</ul>
 				</nav>
 			</div>
+			<c:if test="${login }">
 			<div class="col-lg-3">
 				<div class="header__cart">
 					<ul>
@@ -81,6 +97,7 @@
 					<!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
 				</div>
 			</div>
+			</c:if>
 		</div>
 		<div class="humberger__open">
 			<i class="fa fa-bars"></i>

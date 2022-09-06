@@ -38,7 +38,7 @@
 		<div class="col-lg-9">
 			<div class="hero__search">
 				<div class="hero__search__form">
-					<form action="#">
+					<form>
 						<!-- <div class="hero__search__categories">
 							검색 <span class="arrow_carrot-down"></span>
 						</div> -->
